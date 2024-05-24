@@ -1,0 +1,39 @@
+
+<%- include("partials/header.ejs") %>
+<div class="container fs-5 my-3">
+  
+<form action="/view" method="post">
+  <fieldset>
+    <h1><legend>Create a blog post </legend></h1>
+    <!-- <div class="row my-3">
+      <div class=" col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email" required>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4">Password</label>
+        <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name="password" required>
+      </div>
+    </div> -->
+  <div class="form-group col my-3">
+    <label for="title mb-2">Title</label>
+    <input type="text" class="form-control" name="title" id="title" placeholder="title" required>
+  </div>
+  <div class="form-group my-3">
+    <label for="description">Description</label>
+  <textarea class="form-control" name="description" id="description" rows="3" required></textarea>
+  </div>
+  <div class="form-group my-3">
+    <label for="description ">Content</label>
+  <textarea class="form-control" name="content" id="content" rows="10" cols="100" required ></textarea>
+  </div>
+  <div class="form-group row text-end fs-2">
+    <div class="col-lg-10 ">
+      <button type="submit" class="btn btn-primary btn-lg ">Create</button>
+    </div>
+  </div>
+
+</fieldset>
+</form>
+</div>
+  <%- include("partials/footer.ejs") %>

@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+    <div class=" text-center my-5 wholebg mt-0">
+        <h1 class="display-3 fw-bolder">All Posts</h1>
+        <ol>
+            <% locals.allPosts.forEach((post, index)=> { %>
+                <li>
+                    <div class="container bgImage">
+                    <div class="px-4 pt-5 my-5 text-center border-bottom border border-warning ">
+                        <h2 class="display-4 fw-bolder fs-1 title"><%= post.Title %></h2>
+                        <h2 class=" fs-2 description"><%= post.Description %></h2>
+                        <div class="col-lg-12 mx-auto ">
+                          <p class=" lead mb-4  fs-5 content"><%= post.Content %></p>
+                        </div>
+                        <h3 class="fs-4  text-end  "><%= post.Email %></h2>
+                      </div></div>
+                </li>
+                <% }); %>
+        </ol>
+    </div>
+
+
+
+    <%- include("partials/footer.ejs") %>

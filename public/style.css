@@ -1,0 +1,37 @@
+.border-y:hover{
+    border: 2px solid #fb8500 !important;
+    border-radius: 10px;
+    color: #fb8500 !important;
+
+}
+
+
+.border-y:hover {
+  border: 2px solid #fb8500 !important;
+  border-radius: 10px;
+  color: #fb8500 !important;
+}
+.title{
+  color: #8d99ae !important;
+  
+}
+.description{
+    color: #1b263b !important;
+}
+.content{
+    color: black !important;
+}
+.wholebg{
+  /* background-image: url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/012.webp');
+  height: 100vh; */
+  background-color: #ffd6ff;
+  color: #d90429 !important;
+}
+.bgImage {
+  /* background-color: rebeccapurple !important; */
+  /* color: red; */
+  background-size: cover;
+
+  background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg') !important;
+  /* height: 100vh */
+}

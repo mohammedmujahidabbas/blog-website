@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+<% if (locals.deleted === true) { %>
+    <div class="text-center my-5 wholebg mt-0">
+        <h1 class="display-3 fw-bolder">Post Deleted</h1>
+    </div>
+<% } else if (locals.deleted === false) { %>
+    <div class="text-center my-5 wholebg mt-0">
+        <h1 class="display-3 fw-bolder">Post Not Found</h1>
+    </div>
+<% } else { %>
+    <div class="container">
+        <form action="/delete" method="post">
+            <fieldset>
+                <legend><h1>Delete Post</h1></legend>
+                <div class="form-group col my-3">
+                    <label for="titleName" class="mb-2">Enter the Title of Post to Delete</label>
+                    <input type="text" class="form-control" name="titleName" id="titleName" placeholder="Title">
+                </div>
+                <div class="form-group row text-end fs-2">
+                    <div class="col-lg-10">
+                        <button type="submit" class="btn btn-primary btn-lg my-3">Delete</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+<% } %>
+<%- include("partials/footer.ejs") %>

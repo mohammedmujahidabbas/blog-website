@@ -1,0 +1,66 @@
+<%- include("partials/header.ejs") %>
+    <div class="container">
+        <form action="/edit" method="post">
+            <fieldset>
+                <h1>
+                    <legend>Find the Post</legend>
+                </h1>
+                <div class="form-group col my-3">
+                    <label for="titleName" class="mb-2">Title</label>
+                    <input type="text" class="form-control" name="titleName" id="titleName" placeholder="Title">
+                </div>
+                <div class="form-group row text-end fs-2">
+                    <div class="col-lg-10">
+                        <button type="submit" class="btn btn-primary btn-lg my-3">Find</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <% if(locals.postFound){ %>
+            <div class="text-center my-5 wholebg mt-0">
+                <h1 class="display-3 fw-bolder">Results Found</h1>
+                <ol>
+                    <% let found=false; %>
+                        <% allPosts.forEach((post)=> { %>
+                            <% if (post.Title===FoundTitle) { %>
+                                <% found=true; %>
+
+                                    <li class="mb-4">
+                                        <div class="container bgImage">
+                                            <div class="px-4 pt-5 my-5 text-center border-bottom border border-warning">
+                                                <h2 class="display-4 fw-bolder fs-1 title" style="color: #fb8500;">
+                                                    <%= post.Title %>
+                                                </h2>
+                                                <h3 class="fs-2 text-secondary description">
+                                                    <%= post.Description %>
+                                                </h3>
+                                                <div class="col-lg-12 mx-auto">
+                                                    <p class="lead mb-4 fs-5 content">
+                                                        <%= post.Content %>
+                                                    </p>
+                                                </div>
+                                                <h3 class="fs-4 text-end">
+                                                    <%= post.Email %>
+                                                </h3>
+                                            </div>
+
+                                            <div class="col-lg-10">
+                                                <a href="/delete"><button type="submit" class="btn btn-danger btn-lg my-3">Delete</button></a>
+                                            </div>
+                                        </div>
+            </div>
+            </li>
+            <% }%>
+
+                <% });%>
+
+                    </ol>
+    </div>
+
+    </div>
+    <% } else if(FoundTitle !=null) {%>
+        <div class="text-center my-5 wholebg mt-0">
+            <h1 class="display-3 fw-bolder">No Posts Avaiable</h1>
+        </div>
+        <% } %>
+            <%- include("partials/footer.ejs") %>
